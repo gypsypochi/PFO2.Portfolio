@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Personal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<body>
+
+<!-- Encabezado con Navegación -->
+<header>
+    <nav>
+        <!-- Input para activar el menú móvil (checkbox) -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+        <!-- Ícono de hamburguesa -->
+        <label for="menu-toggle" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+
+        <!-- Menú de navegación -->
+        <ul>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#habilidades">Mis habilidades</a></li>
+            <li><a href="#proyectos">Mis proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#peliculas-favoritas">Películas favoritas</a></li>
+        </ul>
+    </nav>
+
+
+<!-- Botón modo claro/oscuro -->
+<div class="modo-toggle">
+    <button id="modo-btn">
+      <i id="sun" class="fas fa-sun"></i>
+      <div class="switch"></div>
+      <i id="moon" class="fas fa-moon"></i>
+    </button>
+  </div>
+  
+    
+</header>
+
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi">
+        <div class="perfil">
+            <div class="perfil-info">
+                <img src="img/perfil.png" alt="Foto de perfil">
+                <div class="perfil-datos">
+                    <p class="nombre">Micaela Natalia Luaces</p>
+                    <p><strong>Edad:</strong> 30 años</p>
+                    <p><strong>Email:</strong> mikaela.28@hotmail.com</p>
+                    <p><strong>Estudiante de:</strong> Desarrollo de Software</p>
+                    <p><strong>Ubicación:</strong> CABA, Buenos Aires</p>
+                </div>
+            </div>
+            <div class="perfil-texto">
+                <p>Soy estudiante de Desarrollo de Software en el IFTS 29 y trabajo como enfermera de guardia, lo que me ha ayudado a desarrollar habilidades clave como gestión del tiempo y toma de decisiones bajo presión. Mi interés por la tecnología comenzó a los 18 años al gestionar mi propio blog, despertando mi pasión por el desarrollo web. Aunque aún no tengo experiencia en IT, estoy enfocada en seguir aprendiendo para ingresar y crecer en este sector.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Sección de Habilidades -->
+    <section id="habilidades">
+        <h2>Mis habilidades</h2>
+        <div class="contenedor-habilidades">
+            <div class="fila-habilidades">
+                <span class="habilidad">HTML</span>
+                <span class="habilidad">CSS</span>
+                <span class="habilidad">JavaScript</span>
+                <span class="habilidad">Java</span>
+                <span class="habilidad">Photoshop</span>
+                <span class="habilidad">GitHub</span>
+                <span class="habilidad">Python</span>
+                <span class="habilidad">Diseño UX/UI</span>
+                <span class="habilidad">Canva</span>
+                <span class="habilidad">Blogger</span>
+            </div>
+            <div class="fila-habilidades">
+                <span class="habilidad">Git</span>
+                <span class="habilidad">Illustrator</span>
+                <span class="habilidad">Figma</span>
+                <span class="habilidad">React</span>
+                <span class="habilidad">Unity</span>
+                <span class="habilidad">Unreal Engine</span>
+            </div>
+        </div>
+    </section>
+    
+
+<!-- Sección de Proyectos -->
+<section id="proyectos">
+    <h2>Mis proyectos</h2>
+    <div class="contenedor-proyectos">
+        <div class="tarjeta">
+            <img src="img/juegolyt.jpg" alt="Proyecto 1">
+            <div class="descripcion">
+                <h4>BLOG</h4>
+                <p>Blog personal sobre libros y entrevistas.</p>
+                <div class="etiquetas">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <img src="img/te lo cambio.jpg" alt="Proyecto 2">
+            <div class="descripcion">
+                <h4>APP</h4>
+                <p>Proyecto en FIGMA sobre APP de intercambio de libros.</p>
+                <div class="etiquetas">
+                    <span>Figma</span>
+                    <span>Photoshop</span>
+                    <span>Illustrator</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Formulario -->
+<section id="contacto">
+    <div class="contenedor-formulario">
+        <h2>Contacto</h2>
+        
+        <!-- Mensajes de error -->
+        <div id="errores" class="errores"></div>
+        
+        <form id="formulario-contacto" action="#" method="post">
+            <div class="fila">
+                <div class="campo">
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                </div>
+                <div class="campo">
+                    <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+                </div>
+            </div>
+            <div class="campo">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="campo">
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Mensaje" required></textarea>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="botones">
+                <button type="submit" class="enviar">Enviar</button>
+                <button type="reset" class="borrar">Borrar</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+
+<!-- Sección de Películas Favoritas -->
+<section id="peliculas-favoritas">
+  <h2>Mis películas favoritas</h2>
+  <div class="peliculas-container">
+    <div class="pelicula-card" data-imgs='["img/calabozosdragones.jpg", "img/calabozosdragones2.jpg", "img/calabozosdragones3.jpg"]'>
+      <img class="pelicula-img" src="img/calabozosdragones.jpg" alt="Calabozos y Dragones">
+      <div class="pelicula-resena">
+        <p>Una aventura épica llena de magia, acción y comedia.</p>
+      </div>
+      <h3>Calabozos y Dragones</h3>
+      <div class="pelicula-etiquetas">
+        <span>Aventura</span>
+        <span>Netflix</span>
+        <span>2023</span>
+      </div>
+    </div>
+
+    <div class="pelicula-card" data-imgs='["img/flow.jpg", "img/flow2.jpg", "img/flow3.jpg"]'>
+      <img class="pelicula-img" src="img/flow.jpg" alt="Flow">
+      <div class="pelicula-resena">
+        <p>Un viaje emocionante sobre creatividad y autosuperación.</p>
+      </div>
+      <h3>Flow</h3>
+      <div class="pelicula-etiquetas">
+        <span>Animacion</span>
+        <span>HBO Max</span>
+        <span>2022</span>
+      </div>
+    </div>
+
+    <div class="pelicula-card" data-imgs='["img/grandes-heroes.jpg", "img/grandes-heroes2.jpg", "img/grandes-heroes3.jpg"]'>
+      <img class="pelicula-img" src="img/grandes-heroes.jpg" alt="Grandes Héroes">
+      <div class="pelicula-resena">
+        <p>Esta película me encantó desde el momento en que la vi en el cine. ¡Héroes y tecnología combinados!</p>
+      </div>
+      <h3>Grandes Héroes</h3>
+      <div class="pelicula-etiquetas">
+        <span>Drama</span>
+        <span>Disney +</span>
+        <span>2021</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contador-visitas">
+  Visitas: <span id="visitas"></span>
+</section>
+
+
+    
+<!-- Footer -->
+<footer>
+    <p>Sígueme en mis redes sociales:</p>
+    <div class="redes-sociales">
+        <a href="https://www.facebook.com/Miikaa.28/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://x.com/JuegodeLyT" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/micaelaluaces/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/gypsypochi/" target="_blank"><i class="fa-brands fa-instagram"></i></a> <!-- Instagram agregado -->
+    </div>
+</footer>
+
+<script src="javascript/script.js"></script>
+</body>
+</html>

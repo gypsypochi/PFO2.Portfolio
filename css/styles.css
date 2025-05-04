@@ -1,0 +1,1207 @@
+/* ================================ */
+/*  ESTILOS GENERALES           
+/* ================================ */
+html, body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(500deg, #1b0242, #8e6fad);
+    color: #fff;
+    height: 100%;
+    margin: 0; 
+    padding: 0; 
+    overflow-x: hidden; 
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================ */
+/*  SECCIÓN: NAVBAR - Barra de navegación fija 
+/* ============================================ */
+
+/*  Contenedor principal del navbar */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(42, 10, 94, 0.9);
+    padding: 0.75rem 1rem;
+    position: fixed;
+    top: 0.625rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    border-radius: 1.875rem;
+    box-shadow: 0rem 0.25rem 0.625rem rgba(16, 1, 44, 0.5);
+    z-index: 1000;
+}
+
+/*  Lista de elementos del menú */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    justify-content: center;
+}
+
+/*  Estilo de los enlaces del navbar */
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    border-radius: 1.25rem;
+    white-space: nowrap;
+}
+
+/* ✨ Efecto hover en enlaces */
+nav a:hover {
+    color: #b48cff;
+}
+
+/* ============================================ */
+/*  HAMBURGUESA - Ícono de menú para móvil */
+/* ============================================ */
+
+/*  Ocultar checkbox que controla el menú */
+input[type="checkbox"] {
+    display: none;
+}
+
+/*  Estilo del icono hamburguesa */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 0.2rem;
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*  Líneas del ícono hamburguesa */
+.hamburger div {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #dcaff1;
+}
+
+/* ============================================ */
+/*  SECCIÓN: SOBRE MÍ 
+/* ============================================ */
+
+/*  Sección principal */
+#sobre-mi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/*  Contenedor general del perfil */
+.perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 50rem;
+}
+
+/*  Contenedor de imagen + datos personales */
+.perfil-info {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 37.5rem;
+    padding: 1rem;
+}
+
+/*  Imagen de perfil */
+.perfil-info img {
+    width: 13.75rem;
+    height: auto;
+    border-radius: 50%;
+    border: 0.2rem solid #17012c;
+    box-shadow: 0 0 0.75rem 0.2rem rgba(16, 1, 44, 0.5);
+    margin-right: 3rem;
+}
+
+/*  Contenedor de los datos personales */
+.perfil-datos {
+    text-align: left;
+    margin-top: 0.5rem;
+}
+
+/*  Nombre destacado */
+.nombre {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #b48cff;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+}
+
+/*  Textos simples */
+.perfil-datos p {
+    color: #fff;
+    margin: 0.3rem 0;
+}
+
+/*  Contenedor del texto biográfico */
+.perfil-texto {
+    background: rgba(75, 0, 130, 0.2);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    max-width: 800px;
+    margin-top: 1rem;
+    box-shadow: 0 0 0.75rem 0.2rem rgba(16, 1, 44, 0.5) !important;
+}
+
+/*  Texto dentro del perfil-texto */
+.perfil-texto p {
+    color: #ffffff;
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+}
+
+/* ============================================ */
+/*  SECCIÓN: HABILIDADES */
+/* ============================================ */
+
+/*  Sección principal */
+#habilidades {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: -5rem;
+}
+
+/*  Título de la sección */
+#habilidades h2 {
+    margin-bottom: 0.5rem;
+}
+
+/*  Contenedor de habilidades */
+.contenedor-habilidades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+/*  Filas de habilidades */
+.fila-habilidades {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/*  Estilos base de cada habilidad */
+.habilidad {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 0 0.2rem rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/*  Clase activadora para hacer visible la habilidad */
+.habilidad.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*  Efecto hover */
+.habilidad:hover {
+    color: #fff;
+    box-shadow: 0 0 0.75rem rgba(180, 140, 255, 0.8), 0 0 0 0.2rem rgba(180, 140, 255, 0.8) inset;
+}
+
+/* ============================================ */
+/*  SECCIÓN: PROYECTOS */
+/* ============================================ */
+
+/*  Sección principal */
+#proyectos {
+    text-align: center;
+    padding: 0;
+}
+
+/*  Contenedor de proyectos */
+.contenedor-proyectos {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+}
+
+/*  Tarjeta de proyecto */
+.tarjeta {
+    position: relative;
+    width: 25rem;
+    height: 15rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.6rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/*  Imagen dentro de la tarjeta */
+.tarjeta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*  Descripción dentro de la tarjeta */
+.descripcion {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(22, 0, 48, 0.7);
+    color: #fff;
+    padding: 0.8rem;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*  Título y descripción */
+.descripcion h4 {
+    font-size: 1.2rem;
+    margin: 0;
+    padding-bottom: 0.3rem;
+}
+
+.descripcion p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/*  Efecto hover en la tarjeta */
+.tarjeta:hover .descripcion {
+    opacity: 1;
+}
+
+/*  Estilos de etiquetas */
+.etiquetas {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+/*  Efecto hover en las etiquetas */
+.tarjeta:hover .etiquetas {
+    opacity: 1;
+}
+
+/*  Estilo de cada etiqueta */
+.etiquetas span {
+    background: rgba(60, 1, 99, 0.459);
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.6rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #e7c2f8;
+    transition: 0.3s ease-in-out;
+}
+
+/*  Efecto hover en la etiqueta */
+.etiquetas span:hover {
+    background: rgba(129, 53, 165, 0.815);
+}
+
+/* ============================================ */
+/*  SECCIÓN: FORMULARIO */
+/* ============================================ */
+
+/*  Sección principal */
+#contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+}
+
+/*  Contenedor del formulario */
+.contenedor-formulario {
+    width: 90%;
+    max-width: 30rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+/*  Título del formulario */
+.contenedor-formulario h2 {
+    color: #fff;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+/*  Alineación de campos en línea */
+.fila {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/*  Estilo de los campos dentro de la fila */
+.fila .campo {
+    width: 48%;
+}
+
+/*  Estilo general para los campos de entrada */
+.campo {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+/*  Estilos para inputs y textarea */
+input, textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.75rem;
+    font-size: 1.1rem;
+    background: rgba(80, 10, 120, 0.4);
+    color: white;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/*  Estilo de los placeholders */
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
+
+/*  Estilo de campos en foco */
+input:focus, textarea:focus {
+    background: rgba(80, 10, 120, 0.6);
+    border-color: #8ea862;
+}
+
+/*  Estilo del textarea */
+textarea {
+    resize: vertical;
+}
+
+/*  Estilo de los mensajes de error */
+.errores {
+    color: #ffcccc;
+    background: rgba(200, 0, 33, 0.363);
+    padding: 1rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    display: none;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+/*  Estilos para los botones */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/*  Estilo del botón de enviar */
+button {
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #8ea862;
+    color: white;
+    position: relative;
+}
+
+/*  Efecto hover en el botón de enviar */
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/*  Animación del spinner al enviar */
+button.enviar.loading::after {
+    content: " ⏳";
+    animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*  Estilo del botón de borrar */
+button.borrar {
+    background: #cc4444;
+}
+
+/*  Efecto hover en el botón de borrar */
+button.borrar:hover {
+    background: #aa3333;
+}
+
+/*  Efecto activo en el botón de borrar */
+button.borrar:active {
+    transform: scale(0.95);
+}
+
+/* ============================================ */
+/*  SECCIÓN: PELÍCULAS FAVORITAS */
+/* ============================================ */
+
+/*  Sección principal de películas favoritas */
+#peliculas-favoritas h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0.5rem; 
+}
+
+/*  Contenedor de películas */
+.peliculas-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.25rem; 
+    flex-wrap: wrap;
+    padding: 1.25rem; 
+}
+
+/*  Estilo de la tarjeta de película */
+.pelicula-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem; 
+    text-align: center;
+    width: 15rem; 
+    padding: 0.5rem; 
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+/*  Efecto hover en la tarjeta */
+.pelicula-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0.4rem 1rem rgba(255, 255, 255, 0.4);
+}
+
+/*  Imagen de la película */
+.pelicula-card img {
+    width: 100%;
+    height: 20rem; 
+    object-fit: cover;
+    border-radius: 0.5rem; 
+    transition: opacity 0.3s ease;
+}
+
+/*  Reseña dentro de la tarjeta */
+.pelicula-resena {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    padding: 1rem; 
+    border-radius: 0.5rem; 
+    text-align: justify;
+    font-size: 1rem; 
+    box-shadow: inset 0 0 0.5rem rgba(255, 255, 255, 0.2);
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 90%;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+/*  Ocultar imagen y mostrar reseña al hacer hover */
+.pelicula-card:hover img {
+    opacity: 0;
+}
+
+.pelicula-card:hover .pelicula-resena {
+    opacity: 1;
+}
+
+/*  Contenedor de etiquetas */
+.pelicula-etiquetas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.4rem; 
+    margin-top: 0.5rem; 
+    width: 100%;
+}
+
+/*  Estilo de cada etiqueta */
+.pelicula-etiquetas span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.4rem 0.625rem; 
+    border-radius: 0.625rem; 
+    font-size: 0.75rem; 
+    color: white;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*  Márgenes para la última tarjeta de película */
+.pelicula-card:last-of-type {
+    margin-bottom: 2.5rem; 
+}
+
+/* ============================================ */
+/* SECCIÓN: CONTADOR DE VISITAS */
+/* ============================================ */
+
+/* Estilo general del contador */
+#contador-visitas {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1.2rem;
+    border-radius: 1rem;
+    margin: 2rem auto 1rem auto;
+    width: fit-content;
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent;
+}
+
+/* Estilo del contador en el tema oscuro */
+body.oscuro #contador-visitas {
+    background-color: #2a0a5e;
+    color: #e0d6f5;
+    border-color: #9d4edd;
+    box-shadow: 0 0 0.5rem #9d4edd;
+}
+
+/* ============================================ */
+/* SECCIÓN: FOOTER */
+/* ============================================ */
+
+/* Pie de página principal */
+footer {
+    text-align: center;
+    padding: 1.25rem;
+    background: #222;
+    color: white;
+    width: 100%;
+    position: relative;
+}
+
+/* Contenedor de íconos de redes sociales */
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 0.9375rem;
+    margin-top: 0.625rem;
+}
+
+/* Íconos individuales */
+.redes-sociales a {
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover en íconos */
+.redes-sociales a:hover {
+    transform: scale(1.2);
+}
+
+/* ============================================ */
+/* BOTÓN DE MODO CLARO/OSCURO */
+/* ============================================ */
+
+/*  Contenedor flotante del botón (posición fija en pantalla) */
+.modo-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+    z-index: 1001; /* Asegura que esté por encima de otros elementos */
+}
+
+/*  Botón principal de cambio de modo */
+#modo-btn {
+    width: 80px;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/*  Íconos del sol y la luna dentro del botón */
+#modo-btn i {
+    color: #1b0242;
+    font-size: 1.2rem;
+    z-index: 2; /* Asegura que estén por encima del fondo del botón */
+}
+
+/*  Círculo deslizante (switch) que se mueve para indicar el estado */
+.switch {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #6f42c1;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 0;
+}
+
+/* ===================== */
+/*  MODO CLARO */
+/* ===================== */
+
+/* Color de fondo y texto del botón en modo claro */
+body.claro #modo-btn {
+    background-color: #6f42c1;
+    color: #fff;
+}
+
+/* Posición y color del interruptor en modo claro (a la izquierda) */
+body.claro .switch {
+    transform: translateX(0);
+    background-color: #6f42c1;
+}
+
+/* Muestra el ícono del sol en modo claro */
+body.claro #sun-icon {
+    opacity: 1;
+}
+
+/* Oculta el ícono de la luna en modo claro */
+body.claro #moon-icon {
+    opacity: 0;
+}
+
+/* Cambia el color al pasar el mouse sobre el botón en modo claro */
+body.claro #modo-btn:hover {
+    background-color: #5a33a2;
+}
+
+/* ===================== */
+/*  MODO OSCURO */
+/* ===================== */
+
+/* Mueve el interruptor hacia la derecha y cambia su color en modo oscuro */
+body.oscuro .switch {
+    transform: translateX(40px);
+    background-color: #fff;
+}
+  
+/* ============================================ */
+/* SECCIÓN: MODO CLARO/OSCURO - ESTILOS GLOBALES */
+/* ============================================ */
+
+/* Modo claro - fondo y texto general */
+body.claro {
+    background: linear-gradient(500deg, #aaa2b4, #dcd3ec);
+    color: #1b0242;
+}
+
+/* Modo claro - botón de cambio */
+body.claro #modo-btn {
+    background-color: #fff;
+}
+
+/* Modo oscuro - botón de cambio */
+body.oscuro #modo-btn {
+    background-color: #333;
+}
+
+/* ============================================ */
+/* SECCIÓN: SOBRE MÍ EN MODO CLARO */
+/* ============================================ */
+
+/* Color de textos */
+body.claro #sobre-mi {
+    color: #1b0242;
+}
+
+/* Fondo de la biografía */
+body.claro .perfil-texto {
+    background: rgba(75, 0, 130, 0.1);
+    color: #1b0242;
+}
+
+/* Borde de la imagen de perfil */
+body.claro .perfil-info img {
+    border: 0.2rem solid #6f42c1;
+}
+
+/* Color del texto en datos personales */
+body.claro .perfil-datos p {
+    color: #1b0242;
+}
+
+/* ============================================ */
+/* SECCIÓN: CONTADOR DE VISITAS EN MODO CLARO */
+/* ============================================ */
+
+body.claro #contador-visitas {
+    background-color: #e6dbf4;
+    color: #4a116a;
+    border-color: #6f42c1;
+    box-shadow: 0 0 0.5rem rgba(165, 120, 255, 0.3);
+}
+
+/* ============================================ */
+/* SECCIÓN: NAVBAR Y FOOTER EN MODO CLARO */
+/* ============================================ */
+
+/* Estilo del navbar */
+body.claro nav {
+    background: #b1abb9;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de enlaces del navbar */
+body.claro nav a {
+    color: #1b0242 !important;
+}
+
+/* Estilo del footer */
+body.claro footer {
+    background: #837491;
+    color: #8e5cc7;
+}
+
+/* Enlaces de redes sociales */
+body.claro .redes-sociales a {
+    color: #1b0242;
+}
+
+/* ============================================ */
+/* SECCIÓN: TEXTOS GENERALES EN MODO CLARO */
+/* ============================================ */
+
+/* Color de textos, títulos y otros elementos en modo claro */
+body.claro h1,
+body.claro h2,
+body.claro h3,
+body.claro h4,
+body.claro h5,
+body.claro h6,
+body.claro p,
+body.claro span,
+body.claro strong,
+body.claro .descripcion,
+body.claro .card,
+body.claro .texto-sobremi {
+    color: #1b0242 !important;
+}
+
+/* ============================================ */
+/* SECCIÓN: TARJETAS DE PROYECTOS */
+/* ============================================ */
+
+/* Fondo, color de texto y sombra en modo claro */
+body.claro .tarjeta {
+    background-color: #f6effb !important;
+    color: #1b0242 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease;
+}
+
+/* Hover de tarjeta en modo claro */
+body.claro .tarjeta:hover {
+    background-color: rgba(180, 150, 255, 0.4) !important;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ============================================ */
+/* SECCIÓN: TARJETAS DE PELÍCULAS */
+/* ============================================ */
+
+/* Fondo, color de texto y sombra de tarjeta de película */
+body.claro .pelicula-card {
+    background-color: #f9ebff !important;
+    color: #1b0242 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover en tarjeta de película */
+body.claro .pelicula-card:hover {
+    background-color: rgba(240, 230, 255, 0.6) !important;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ============================================ */
+/* SECCIÓN: ETIQUETAS EN MODO CLARO */
+/* ============================================ */
+
+/* Estilo de fondo y color de etiquetas */
+body.claro .etiquetas span,
+body.claro .pelicula-etiquetas span {
+    background-color: #dfc8f5 !important;
+    color: #1b0242 !important;
+}
+
+/* Hover en etiquetas */
+body.claro .etiquetas span:hover {
+    background: #c8a6e8 !important;
+}
+
+/* ============================================ */
+/* SECCIÓN: TARJETAS DE HABILIDADES */
+/* ============================================ */
+
+/* Estilo base de cada tarjeta de habilidad */
+body.claro .habilidad {
+    background-color: #dfc8f5 !important;
+    color: #1b0242 !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease;
+}
+
+/* Hover en tarjetas de habilidad */
+body.claro .habilidad:hover {
+    background-color: rgba(200, 160, 240, 0.4) !important;
+    box-shadow: 0 0 10px rgba(180, 140, 255, 0.6) !important;
+}
+
+/* ============================================ */
+/* SECCIÓN: FORMULARIO DE CONTACTO */
+/* ============================================ */
+
+/* Fondo y estilo de inputs, textarea y select */
+body.claro input,
+body.claro textarea,
+body.claro select {
+    background-color: #faf5ff !important;
+    color: #1b0242 !important;
+    border: 1px solid #c3a4e4 !important;
+}
+
+/* Color de placeholder en modo claro */
+body.claro input::placeholder,
+body.claro textarea::placeholder {
+    color: #a57ed4 !important;
+}
+
+/* ============================================ */
+/* SECCIÓN: DESCRIPCIÓN Y RESEÑAS */
+/* ============================================ */
+
+/* Descripción de proyecto al hacer hover */
+body.claro .descripcion {
+    background: rgba(248, 240, 255, 0.795) !important;
+    color: #1b0242 !important;
+}
+
+/* Reseña de película visible al hacer hover */
+body.claro .pelicula-resena {
+    background: rgba(248, 240, 255, 0.322) !important;
+    color: #1b0242 !important;
+}
+
+
+/* ========== MEDIA QUERIES (MÓVILES) ========== */
+@media (max-width: 48rem) {
+
+    /* ------------------------------ */
+    /* NAVBAR - Estilos móviles */
+    /* ------------------------------ */
+
+    /* Ajustes para que la barra de navegación sea funcional en pantallas pequeñas */
+    nav {
+        width: 100%;
+        left: 0;
+        transform: none;
+        border-radius: 0;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Íconos del menú hamburguesa organizados en columna */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    /* Menú oculto por defecto y configuración para móviles */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(42, 10, 94, 0.95);
+        padding: 1rem 0;
+        box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.3);
+    }
+
+    /* Visualización del menú al activarse el checkbox */
+    #menu-toggle:checked + .hamburger + ul {
+        display: flex;
+        align-items: center;
+    }
+
+    /* ------------------------------ */
+    /* SECCIÓN: SOBRE MÍ (MÓVIL) */
+    /* ------------------------------ */
+
+    /* Margen superior de la sección */
+    #sobre-mi {
+        margin-top: 5rem;
+    }
+
+    /* Contenedor principal del perfil centrado */
+    #sobre-mi .perfil {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+    }
+
+    /* Contenedor de la información del perfil */
+    #sobre-mi .perfil-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Contenedor circular para la imagen del perfil */
+    #sobre-mi .perfil-img {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 0.2rem solid #17012c;
+        box-shadow: 0 0 0.75rem 0.2rem rgba(16, 1, 44, 0.5);
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Imagen del perfil ajustada dentro del contenedor */
+    #sobre-mi .perfil-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Espaciado entre párrafos del perfil */
+    #sobre-mi .perfil-datos p {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Estilo del texto descriptivo del perfil */
+    #sobre-mi .perfil-texto {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    /* ------------------------------ */
+    /* SECCIÓN: HABILIDADES (MÓVIL) */
+    /* ------------------------------ */
+
+    /* Espaciado general de la sección */
+    #habilidades {
+        margin-top: 3rem;
+        padding-top: 1rem;
+        clear: both;
+    }
+
+    /* Tamaño del título en móviles */
+    #habilidades h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Fila que contiene las habilidades, con espacio y ajuste en pantallas pequeñas */
+    .fila-habilidades {
+        gap: 0.8rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Estilo individual para cada habilidad */
+    .habilidad {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+        border-radius: 0.5rem;
+    }
+
+    /* ------------------------------ */
+    /* SECCIÓN: PROYECTOS (MÓVIL) */
+    /* ------------------------------ */
+
+    /* Contenedor de tarjetas de proyectos en columna */
+    #proyectos .contenedor-proyectos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Tarjeta de proyecto con ancho máximo y espaciado */
+    #proyectos .tarjeta {
+        width: 100%;
+        max-width: 18.75rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Texto descriptivo centrado dentro de cada tarjeta */
+    #proyectos .descripcion {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    /* ------------------------------ */
+    /* SECCIÓN: CONTACTO (MÓVIL) */
+    /* ------------------------------ */
+
+    /* Margen y espaciado general de la sección de contacto */
+    #contacto {
+        margin-top: -5rem;
+        padding-bottom: -2rem;
+        margin-bottom: -5rem;
+    }
+
+    /* Contenedor del formulario centrado con padding */
+    #contacto .contenedor-formulario {
+        padding: 1rem;
+        max-width: 28rem;
+        margin: 0 auto;
+    }
+
+    /* Organización vertical de los campos del formulario */
+    #contacto .fila {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Campos del formulario ajustados al ancho completo */
+    #contacto .campo {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Estilos de los inputs y textarea del formulario */
+    #contacto .campo input,
+    #contacto .campo textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        border: 1px solid #ccc;
+    }
+
+    /* Botones centrados con margen superior */
+    #contacto .botones {
+        text-align: center;
+        margin-top: 1rem;
+    }
+  
+    /* ------------------------------ */
+    /* SECCIÓN: PELÍCULAS FAVORITAS (MÓVIL) */
+    /* ------------------------------ */
+
+    /* Contenedor de tarjetas de películas en columna */
+    #peliculas-favoritas .peliculas-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Tarjeta individual de película con ancho máximo */
+    #peliculas-favoritas .pelicula-card {
+        width: 100%;
+        max-width: 18.75rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Reseña de película centrada y con espaciado */
+    #peliculas-favoritas .pelicula-resena {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    /* ------------------------------ */
+    /* SECCIÓN: FOOTER (MÓVIL) */
+    /* ------------------------------ */
+
+    /* Estilo general del pie de página */
+    footer {
+        text-align: center;
+        padding: 1rem;
+        width: 100vw;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    /* Espaciado y tamaño de íconos de redes sociales */
+    footer .redes-sociales a {
+        margin: 0 1rem;
+        font-size: 1.5rem;
+    }
+}
